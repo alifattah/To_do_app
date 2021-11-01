@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'BKoodakBold';
+  src: url(font/fonts/BKoodakBold.woff) format('woff');
+}
+
+body {
+  font-family: "BKoodakBold", "Fredoka One", cursive;
+  background-image: linear-gradient(to right, #00203FFF, #ADEFD1FF );
+  color: #fff;
+}
+
+.container {
+  width: 1280px;
+  margin: auto;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 70px;
+  margin: 50px 30px 1px;
+}
+
+#header h2 {
+  font-size: 2rem;
+  display: flex;
+}
+
+.check-icon {
+  width: 50px;
+  height: 35px;
+  fill: #fff;
+}
+
+#copyright {
+  display: inline-block;
+  margin-left: 30px;
+  font-size: .75rem;
+}
+
+.link:visited,
+.link:link {
+  color: #ADEFD1FF;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+
+span {
+  margin-right: 10px;
+}
+
+.user_input {
+  margin-top: 2px;
+  width: 350px;
+  text-align: center;
+  display: flex;
+}
+
+.user_input input {
+  width: 75%;
+  outline: none;
+  padding: 15px;
+  border: 1px solid lightgray;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.user_input input:focus {
+  box-shadow: 0 0 5px #00203FFF;
+  border: 1px solid #00203FFF;
+}
+
+.user_input button {
+  cursor: pointer;
+  padding: 8px;
+  width: fit-content;
+  color: black;
+  transition: 1s;
+  outline: none;
+  background-color: lightgray;
+  border: 1px solid lightgray;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 25px;
+}
+
+.user-input button:hover {
+  background-color: transparent;
+  color: white;
+}
+
+#to_do_list {
+  width: 500px;
+  margin: auto;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  padding: 1rem;
+  color: #454545;
+  margin-top: 10px;
+  font-size: 1rem;
+  background-color: white;
+  border: 1px solid lightgray;
+  text-transform: uppercase;
+  list-style: none;
+  transition: all 0.3s ease-in-out;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.item:hover {
+  box-shadow: 0 0 20px #00203FFF;
+  border: 1px solid #00203FFF;
+}
+
+.item i {
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.greenp {
+  color: #ADEFD1FF;
+  animation: moveInLeftCheck 0.3s ease-out;
+}
+
+.checkicon {
+  color: #ADEFD1FF;
+}
+
+.trashicon {
+  animation: moveInLeftTrash 0.3s linear;
+}
+
+.greencheck:hover {
+  color: #ADEFD1FF;
+  transform: rotate(360deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.redtrash:hover {
+  color: #FF4433;
+  animation: shake .3s infinite;
+}
+
+
+
+@keyframes moveInLeftCheck {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  80% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInLeftTrash {
+  100% {
+    opacity: 0;
+    transform: translateX(80%);
+  }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(1deg); }
+  10% { transform: translate(-1px, -1px) rotate(-1deg); }
+  20% { transform: translate(-1px, 1px) rotate(1deg); }
+  30% { transform: translate(1px, 1px) rotate(1deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 1px) rotate(-1deg); }
+  60% { transform: translate(-1px, 1px) rotate(1deg); }
+  70% { transform: translate(1px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 1px) rotate(1deg); }
+  100% { transform: translate(1px, -1px) rotate(-1deg); }
+}
+
+@media (max-width: 1280px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  #header {
+    padding: 20px;
+    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #header h2 {
+    margin: 10px 0;
+  }
+
+  .user_input {
+    width: 100%;
+  }
+
+  #to_do_list {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .user_input input {
+    width: 74%;
+  }
+}
+
+@media (max-width: 320px) {
+  .user_input input {
+    width: 60%;
+  }
+}
